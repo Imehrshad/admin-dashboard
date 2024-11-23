@@ -55,8 +55,8 @@ const Dialog = ({ show, setShow, eventId, editMode, setEditMode }) => {
     startTime.current.value = "";
     endTime.current.value = "";
     titleRef.current.value = "";
-    setDateValue("")
     dialogRef.current.close();
+    setDateValue("")
   };
 
   const submitHandler = (e) => {
