@@ -159,8 +159,8 @@ const Dialog = ({ show, setShow, eventId, editMode, setEditMode }) => {
   const deleteEventHandler = () => {
     dispatch(removeEvent(eventId));
     dispatch(removeCloneEvent(eventId));
-    closeDialog()
-    restForm()
+    closeDialog();
+    restForm();
   };
 
   if (editMode) {
