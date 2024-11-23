@@ -1,0 +1,127 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+:root {
+  --color-primary: #ffffff;
+  --color-secondary: #f9fafb;
+  --color-border: #5d5fef;
+  --color-font: #333f44;
+  --color-button: #5d5fef;
+}
+
+/* Dark mode */
+.dark {
+  --color-primary: #262626;
+  --color-secondary: #3f3f46;
+}
+
+/* Increase specificity by using a parent selector */
+.fc-button {
+  background-color: var(--color-button) !important;
+  color: var(--color-primary) !important;/* Set text color */
+
+}
+
+
+
+@layer base {
+  @font-face {
+    font-family: "Vazir Regular";
+    src: url("../public/Fonts/Vazir/Vazirmatn-Regular.woff2");
+  }
+
+  @font-face {
+    font-family: "Vazir Bold";
+    src: url("../public/Fonts/Vazir/Vazirmatn-Bold.woff2");
+  }
+
+  @font-face {
+    font-family: "Vazir Black";
+    src: url("../public/Fonts/Vazir/Vazirmatn-Black.woff2");
+  }
+
+  @font-face {
+    font-family: "Vazir Thin";
+    src: url("../public/Fonts/Vazir/Vazirmatn-Regular.woff2");
+  }
+}
+@layer components {
+
+  .bg-primary {
+    background-color: var(--color-primary);
+  }
+  .bg-secondary {
+    background-color: var(--color-secondary);
+  }
+  .border-custom {
+    border-color: var(--color-border);
+  }
+  .outline-custom {
+    outline-color: var(--color-border);
+  }
+  .text-custom {
+    color: var(--color-button);
+  }
+  .btn-primary {
+    background-color: var(--color-button);
+    color: var(--color-primary);
+  }
+
+  .flex-container {
+    @apply flex justify-center items-center;
+  }
+
+  .flex-container-start {
+    @apply flex justify-start items-center;
+  }
+
+  .flex-container-between {
+    @apply flex justify-between items-center;
+  }
+
+  .flex-container-col {
+    @apply flex justify-center items-center flex-col;
+  }
+  .hover-items-sidebar {
+    @apply hover:btn-primary hover:text-white hover:shadow-md;
+  }
+  .active-items-sidebar {
+    @apply btn-primary text-white shadow-md;
+  }
+}
+html,
+body {
+  font-family: "Vazir Regular";
+  box-sizing: border-box;
+}
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+/* Minimal Light Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f9fafb; /* secondary color */
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #afafaf; /* borderColor */
+  border-radius: 10px;
+}
+
+/* Minimal Dark Scrollbar */
+.dark ::-webkit-scrollbar-track {
+  background: #3f3f46; /* darkSecondary color */
+}
+
+.dark ::-webkit-scrollbar-thumb {
+  background-color: #262626; /* darkPrimary color */
+}
+/* index.css */

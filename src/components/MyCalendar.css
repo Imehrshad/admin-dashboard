@@ -1,0 +1,9 @@
+.fc-toolbar-title {
+    @apply sm:!text-3xl !text-lg sm:font-bold !text-center;
+  }
+  .fc-col-header-cell-cushion{
+    @apply sm:!text-base !text-xs
+  }
+  .fc-button{
+    @apply sm:!w-auto !w-10 !text-[0.7rem] sm:!text-lg
+  }
