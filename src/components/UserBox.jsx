@@ -14,7 +14,7 @@ const UserBox = () => {
       to="/profile"
     >
       <img
-        src="../public/image/dummy-user.png"
+        src="/image/dummy-user.png"
         alt="ادمین"
         className="md:w-9 w-7 bg-zinc-200 rounded-full object-fill p-1"
       />
