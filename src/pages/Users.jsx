@@ -5,7 +5,6 @@ import InfoCard from "../components/InfoCard";
 import { FaUserCheck, FaUserClock } from "react-icons/fa";
 
 const Users = () => {
-
   const columns = [
     {
       accessorKey: "id",
@@ -38,13 +37,13 @@ const Users = () => {
     },
     {
       title: "کاربرهای تازه وارد",
-      icon: FaUserClock ,
+      icon: FaUserClock,
       value: 20,
       color: "42, 163, 2",
     },
     {
       title: "کاربرهای فعال",
-      icon: FaUserCheck ,
+      icon: FaUserCheck,
       value: USER_DATA.length - 200,
       color: "234, 216, 54",
     },
@@ -52,7 +51,7 @@ const Users = () => {
 
   return (
     <div className=" lg:w-[90%] w-full dark:bg-darkPrimary bg-primary dark:text-white p-4 rounded-md mb-20 overflow-auto flex flex-col  gap-7">
-      <div className="flex gap-2 basis-full flex-wrap">
+      <div className="flex gap-2 flex-wrap basis-full sm:basis-[31%] sm:flex-row flex-col ">
         {cardInfo.map((item, index) => (
           <InfoCard
             value={item.value}

@@ -6,12 +6,13 @@ import {
   getSortedRowModel,
   useReactTable,
 } from "@tanstack/react-table";
-import React from "react";
+import React, { useState } from "react";
 import { GrNext, GrPrevious } from "react-icons/gr";
 import { PiSortAscendingLight, PiSortDescendingLight } from "react-icons/pi";
 import { motion } from "framer-motion";
 
 const MyTable = ({ data, columns }) => {
+  const [isTextWrapped, setIsTextWrapped] = useState(false);
   const table = useReactTable({
     data,
     columns,
@@ -36,12 +37,28 @@ const MyTable = ({ data, columns }) => {
       transition={{ duration: 0.5, ease: "easeOut", delay: 0.2 }}
     >
       <div className="flex gap-4 mb-4">
-        <div className="flex items-center">
+        <div className="flex items-center justify-between w-full">
           <input
             className="border-0 dark:bg-darkSecondary bg-secondary py-2 px-4 rounded focus:outline-double focus:border-0 focus:outline-custom"
             placeholder="جستجو کنید..."
             onChange={(e) => table.setGlobalFilter(e.target.value)}
           />
+          <div className="flex items-center gap-2">
+            <span className="mr-2 sm:text-base text-xs whitespace-nowrap">
+              تعداد نمایش:
+            </span>
+            <select
+              value={table.getState().pagination.pageSize}
+              onChange={(e) => table.setPageSize(Number(e.target.value))}
+              className=" sm:text-base text-xs whitespace-nowrap py-[0.38rem] dark:bg-darkSecondary rounded  px-3 mx-1 bg-primary focus:outline-none"
+            >
+              {[5, 10, 15, 20].map((pageSize) => (
+                <option key={pageSize} value={pageSize}>
+                  {pageSize}
+                </option>
+              ))}
+            </select>
+          </div>
         </div>
       </div>
       <table className="min-w-full table-auto border-collapse border dark:border-zinc-600">
@@ -80,9 +97,11 @@ const MyTable = ({ data, columns }) => {
               {row.getVisibleCells().map((cell) => (
                 <td
                   key={cell.id}
-                  className="py-2 px-4 border text-center text-sm sm:text-base  dark:border-zinc-600 hover:border-zinc-50 "
+                  className="py-2 px-4 border text-center text-sm sm:text-base dark:border-zinc-600 hover:border-zinc-50 "
                 >
-                 <p className="break-inside-auto"> {flexRender(cell.column.columnDef.cell, cell.getContext())}</p>
+                  <p className={`sm:text-sm sm:max-w-full max-w-[12ch] break-words`}>
+                    {flexRender(cell.column.columnDef.cell, cell.getContext())}
+                  </p>
                 </td>
               ))}
             </tr>
@@ -90,33 +109,19 @@ const MyTable = ({ data, columns }) => {
         </tbody>
       </table>
       {/* pagination */}
-      <div className="flex justify-between items-center mt-4">
-        <div className="flex items-center gap-2">
-          <span className="mr-2">تعداد نمایش:</span>
-          <select
-            value={table.getState().pagination.pageSize}
-            onChange={(e) => table.setPageSize(Number(e.target.value))}
-            className="border dark:bg-darkSecondary border-gray-300 rounded py-1 px-3 mx-1 bg-primary"
-          >
-            {[5, 10, 15, 20].map((pageSize) => (
-              <option key={pageSize} value={pageSize}>
-                {pageSize}
-              </option>
-            ))}
-          </select>
-        </div>
-        <div className="flex items-center gap-3">
+      <div className="flex justify-between items-center mt-4 w-full">
+        <div className="flex items-center justify-between sm:justify-start sm:gap-3 gap-1 w-full">
           <button
             onClick={() => table.setPageIndex(table.getPageCount() - 1)}
             disabled={!table.getCanNextPage()}
-            className="px-4 py-2 ml-2 dark:bg-darkSecondary bg-gray-200 rounded disabled:opacity-50 sm:text-base"
+            className="px-4 py-2 ml-2 dark:bg-darkSecondary bg-gray-200 rounded disabled:opacity-50 sm:text-base text-xs whitespace-nowrap"
           >
             آخرین صفحه
           </button>
           <button
             onClick={() => table.nextPage()}
             disabled={!table.getCanNextPage()}
-            className="px-4 py-2 ml-2 dark:bg-darkSecondary bg-gray-200 rounded disabled:opacity-50"
+            className="px-4 py-2 ml-2 dark:bg-darkSecondary bg-gray-200 rounded disabled:opacity-50 sm:text-base text-xs whitespace-nowrap"
           >
             <GrNext />
           </button>
@@ -131,7 +136,7 @@ const MyTable = ({ data, columns }) => {
           <button
             onClick={() => table.previousPage()}
             disabled={!table.getCanPreviousPage()}
-            className="px-4 py-2 mr-2 dark:bg-darkSecondary bg-gray-200 rounded disabled:opacity-50"
+            className="px-4 py-2 mr-2 dark:bg-darkSecondary bg-gray-200 rounded disabled:opacity-50 sm:text-base text-xs whitespace-nowrap"
           >
             <GrPrevious />{" "}
           </button>
@@ -139,7 +144,7 @@ const MyTable = ({ data, columns }) => {
           <button
             onClick={() => table.setPageIndex(0)}
             disabled={!table.getCanPreviousPage()}
-            className="px-4 py-2 mr-2 dark:bg-darkSecondary bg-gray-200 rounded disabled:opacity-50"
+            className="px-4 py-2 mr-2 dark:bg-darkSecondary bg-gray-200 rounded disabled:opacity-50 sm:text-base text-xs whitespace-nowrap"
           >
             صفحه اول
           </button>

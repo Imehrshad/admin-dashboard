@@ -20,7 +20,7 @@ const InfoCard = ({ value, title, Icon, color }) => {
       transition={{ duration: 0.5, ease: "easeOut", delay: 0.2 }}
       className="grow bg-secondary text-black dark:text-white dark:bg-darkSecondary p-4 rounded-lg flex flex-col gap-2">
         <div className="w-full flex justify-between items-center gap-2">
-          <h1 className="font-vazir-bold lg:text-xl md:text-sm text-xl">
+          <h1 className="font-vazir-regular lg:text-lg md:text-sm text-lg">
             {title}
           </h1>
           <div
@@ -36,7 +36,7 @@ const InfoCard = ({ value, title, Icon, color }) => {
             />
           </div>
         </div>
-        <h1 className="lg:text-3xl md:text-base text-3xl ">{value}</h1>
+        <h1 className="lg:text-xl md:text-base text-xl font-vazir-regular ">{value}</h1>
       </motion.div>
   );
 };

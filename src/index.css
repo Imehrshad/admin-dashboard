@@ -2,7 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-
 :root {
   --color-primary: #ffffff;
   --color-secondary: #f9fafb;
@@ -20,35 +19,31 @@
 /* Increase specificity by using a parent selector */
 .fc-button {
   background-color: var(--color-button) !important;
-  color: var(--color-primary) !important;/* Set text color */
-
+  color: var(--color-primary) !important; /* Set text color */
 }
-
-
 
 @layer base {
   @font-face {
     font-family: "Vazir Regular";
-    src: url("../public/Fonts/Vazir/Vazirmatn-Regular.woff2");
+    src: url("./assets/Fonts/Vazir/Vazirmatn-Regular.woff2");
   }
 
   @font-face {
     font-family: "Vazir Bold";
-    src: url("../public/Fonts/Vazir/Vazirmatn-Bold.woff2");
+    src: url("./assets/Fonts/Vazir/Vazirmatn-Bold.woff2");
   }
 
   @font-face {
     font-family: "Vazir Black";
-    src: url("../public/Fonts/Vazir/Vazirmatn-Black.woff2");
+    src: url("./assets/Fonts/Vazir/Vazirmatn-Black.woff2");
   }
 
   @font-face {
     font-family: "Vazir Thin";
-    src: url("../public/Fonts/Vazir/Vazirmatn-Regular.woff2");
+    src: url("./assets/Fonts/Vazir/Vazirmatn-Thin.woff2");
   }
 }
 @layer components {
-
   .bg-primary {
     background-color: var(--color-primary);
   }
