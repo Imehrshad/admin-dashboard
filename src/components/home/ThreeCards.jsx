@@ -13,7 +13,7 @@ const ThreeCards = () => {
         className="lg:flex-[0_0_30%] md:flex-[0_0_32%] flex-[0_0_100%] bg-secondary text-black dark:text-white dark:bg-darkSecondary p-4 rounded-lg flex flex-col gap-2"
       >
         <div className="w-full flex justify-between items-center gap-2">
-          <h1 className="font-vazir-regular lg:text-xl md:text-sm text-lg">
+          <h1 className="font-vazir-regular lg:text-lg md:text-sm text-lg ">
             تعداد مشتریان
           </h1>
           <div className="bg-purple-200 p-2 rounded-full shadow-[0_0_15px] shadow-purple-600">
@@ -23,7 +23,7 @@ const ThreeCards = () => {
             />
           </div>
         </div>
-        <h1 className="lg:text-3xl md:text-base text-xl font-vazir-regular ">3250</h1>
+        <h1 className="lg:text-lg md:text-sm text-lg  font-vazir-regular ">3250</h1>
       </motion.div>
       <motion.div
         initial={{ opacity: 0, y: 100 }}
@@ -32,7 +32,7 @@ const ThreeCards = () => {
         className="lg:flex-[0_0_30%] md:flex-[0_0_32%] flex-[0_0_100%] bg-secondary text-black dark:text-white dark:bg-darkSecondary p-4 rounded-lg flex flex-col gap-2"
       >
         <div className="w-full flex justify-between items-center gap-2">
-          <h1 className="font-vazir-regular lg:text-xl md:text-sm text-lg">
+          <h1 className="font-vazir-regular lg:text-lg md:text-sm text-lg ">
             کالای فروش رفته
           </h1>
           <div className="bg-cyan-200 p-2 rounded-full shadow-[0_0_15px] shadow-cyan-600">
@@ -42,7 +42,7 @@ const ThreeCards = () => {
             />
           </div>
         </div>
-        <h1 className="lg:text-3xl md:text-base text-xl font-vazir-regular ">2011</h1>
+        <h1 className="lg:text-lg md:text-sm text-lg  font-vazir-regular ">2011</h1>
       </motion.div>
       <motion.div
         initial={{ opacity: 0, x: -100 }}
@@ -51,7 +51,7 @@ const ThreeCards = () => {
         className="lg:flex-[0_0_30%] md:flex-[0_0_32%] flex-[0_0_100%] bg-secondary text-black dark:text-white dark:bg-darkSecondary p-4 rounded-lg flex flex-col gap-2"
       >
         <div className="w-full flex justify-between items-center gap-2">
-          <h1 className="font-vazir-regular lg:text-xl md:text-sm text-lg">
+          <h1 className="font-vazir-regular lg:text-lg md:text-sm text-lg ">
             مبلغ سود این ماه
           </h1>
           <div className="bg-emerald-200 p-2 rounded-full shadow-[0_0_15px] shadow-emerald-600">
@@ -61,7 +61,7 @@ const ThreeCards = () => {
             />
           </div>
         </div>
-        <h1 className="lg:text-3xl md:text-base text-xl font-vazir-regular ">1230450</h1>
+        <h1 className="lg:text-lg md:text-sm text-lg  font-vazir-regular ">1230450</h1>
       </motion.div>
     </>
   );
